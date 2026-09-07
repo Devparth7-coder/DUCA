@@ -154,8 +154,13 @@ Dockerfile        full-judge production image (4 languages)
 
 Deep near-black (`#06070a`) surfaces, 1px hairline borders, one restrained violet→mint accent used for
 CTAs and the brand mark, JetBrains Mono for anything technical, Inter for everything else, soft glow only
-where state deserves it (live, accepted, rank). No stock imagery: the identity system is the geometric
-"D" mark (logo = favicon = profile tiles), generated identicon avatars, and inline SVG data-viz.
+where state deserves it (live, accepted, rank).
+
+**Brand identity** — the official DevUnity CodeArena arena badge lives in `web/public/brand/`:
+`logo.png` (full badge, auth/CTA), `logo-emblem.png` (cropped gate emblem for nav/footer),
+`favicon.png` + `apple-touch-icon.png` (32/180), `og.png` (1200×630 social card), all generated from the
+master artwork with transparent background and palette-optimized sizes. Avatars stay procedural
+(generated identicons) and data-viz is inline SVG — nothing else on the site loads third-party imagery.
 
 ---
 

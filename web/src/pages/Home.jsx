@@ -3,6 +3,7 @@ import { Link } from '../lib/router.jsx';
 import { useApp } from '../store.jsx';
 import { api, fmt, serverNow } from '../lib/api.js';
 import { Reveal, Countdown, ContestStatus, Rating, Verdict } from '../components/ui.jsx';
+import { Logo } from '../App.jsx';
 import { Avatar } from '../components/Nav.jsx';
 
 /* ---------- hero canvas: animated grid + rating particles + cursor parallax ---------- */
@@ -148,7 +149,10 @@ export function Home() {
         <div className="container hero-inner">
           <div className="grid" style={{ gridTemplateColumns: 'minmax(0,1.35fr) minmax(300px, .65fr)', alignItems: 'end', gap: 40 }}>
             <div>
-              <p className="eyebrow" style={{ marginBottom: 20 }}>DevUnity Tech Club · Competitive Programming Platform</p>
+              <div className="row" style={{ gap: 12, marginBottom: 18 }}>
+                <Logo size={44} full style={{ borderRadius: 12, boxShadow: '0 10px 36px rgba(124,140,255,.28)' }} />
+                <p className="eyebrow" style={{ margin: 0 }}>DevUnity Tech Club · Competitive Programming Platform</p>
+              </div>
               <h1 className="display">ENTER<br />THE <span className="stroke">ARENA.</span></h1>
               <p className="hero-sub" style={{ marginTop: 18 }}>Code. Compete. Rise.</p>
               <p className="hero-body">
@@ -315,6 +319,7 @@ export function Home() {
           <Reveal>
             <div className="card pad" style={{ padding: '64px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(30rem 12rem at 50% 130%, rgba(124,140,255,.18), transparent)', pointerEvents: 'none' }} />
+              <Logo size={92} full style={{ borderRadius: 22, margin: '0 auto 18px', boxShadow: '0 18px 60px rgba(124,140,255,.25)' }} />
               <h2 className="sect">Your first verdict is<br />three minutes away.</h2>
               <p className="dim" style={{ margin: '14px auto 26px', maxWidth: 520 }}>
                 Register, solve the warmup problem, watch your name hit the live feed.

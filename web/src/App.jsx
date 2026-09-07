@@ -94,17 +94,17 @@ function Footer() {
   );
 }
 
-export function Logo({ size = 30 }) {
+export function Logo({ size = 30, full = false, className = '', style }) {
   return (
-    <svg className="mark" width={size} height={size} viewBox="0 0 64 64" aria-hidden="true">
-      <defs>
-        <linearGradient id="lg-mark" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#7c8cff" /><stop offset="1" stopColor="#37e2c5" />
-        </linearGradient>
-      </defs>
-      <rect width="64" height="64" rx="14" fill="#0a0c12" stroke="rgba(255,255,255,.08)" />
-      <path d="M16 12h16a20 20 0 0 1 0 40H16V12Z" fill="none" stroke="url(#lg-mark)" strokeWidth="5" strokeLinejoin="round" />
-      <rect x="24" y="24" width="15" height="15" rx="3" fill="url(#lg-mark)" transform="rotate(45 31.5 31.5)" />
-    </svg>
+    <span className={'brand-logo ' + className} style={{ width: size, height: size, display: 'inline-block', flex: 'none', ...style }}>
+    <img
+      className="brand-mark"
+      src={full ? '/brand/logo.png' : '/brand/logo-emblem.png'}
+      width={size} height={size}
+      alt="DevUnity CodeArena"
+      style={{ borderRadius: Math.round(size * 0.28) }}
+      draggable={false}
+    />
+    </span>
   );
 }

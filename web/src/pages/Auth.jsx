@@ -37,9 +37,9 @@ export function Auth({ mode }) {
     <div className="container section auth-wrap" style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) minmax(0,1fr)', gap: 40, alignItems: 'center', minHeight: '72vh' }}>
       <div style={{ display: 'none' }} className="auth-art-only" />
       <div>
-        <div className="brand" style={{ marginBottom: 26 }}>
-          <Logo size={40} />
-          <div className="brand-word"><b style={{ fontSize: 18 }}>DEVUNITY CODEARENA</b><span>Compete · Build · Improve · Belong</span></div>
+        <div className="row" style={{ marginBottom: 26, gap: 16 }}>
+          <Logo size={96} full className="auth-badge" />
+          <div className="brand-word"><b style={{ fontSize: 15, letterSpacing: '.08em' }}>DEVUNITY TECH CLUB PRESENTS</b><span style={{ fontSize: 11, letterSpacing: '.3em', color: 'var(--accent-2)' }}>THE ARENA AWAITS</span></div>
         </div>
         <h2 className="sect" style={{ marginBottom: 10 }}>
           {tab === 'login' ? 'The arena kept your seat warm.' : 'Register once. Compete forever.'}
