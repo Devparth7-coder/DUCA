@@ -43,9 +43,18 @@ async function serveStatic(req, res, pathname) {
   const ext = path.extname(file);
   const isHtml = ext === '.html';
   securityHeaders(res, isHtml);
+  if (isHtml) {
+    // absolutize og:image against the serving host so social crawlers resolve it
+    let html = fs.readFileSync(file, 'utf8');
+    const origin = `${req.headers['x-forwarded-proto'] || (config.isProd ? 'https' : 'http')}://${req.headers.host}`;
+    html = html.replace(/content="\/brand\//g, `content="${origin}/brand/`);
+    res.writeHead(200, { 'Content-Type': MIME[ext], 'Cache-Control': 'no-cache' });
+    res.end(html);
+    return true;
+  }
   res.writeHead(200, {
     'Content-Type': MIME[ext] || 'application/octet-stream',
-    'Cache-Control': pathname.startsWith('/assets/') && !isHtml ? 'public, max-age=31536000, immutable' : (isHtml ? 'no-cache' : 'public, max-age=3600'),
+    'Cache-Control': pathname.startsWith('/assets/') ? 'public, max-age=31536000, immutable' : 'public, max-age=3600',
   });
   fs.createReadStream(file).pipe(res);
   return true;
