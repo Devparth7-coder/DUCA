@@ -4,7 +4,9 @@
   "private": true,
   "description": "DEVUNITY CODEARENA — Compete. Build. Improve. Belong.",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "install:all": "npm --prefix server install && npm --prefix web install",
     "build": "npm --prefix web run build",
@@ -14,5 +16,8 @@
     "smoke": "node scripts/smoke.mjs",
     "uitest": "node scripts/uitest.mjs",
     "test": "npm run smoke"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3"
   }
 }
